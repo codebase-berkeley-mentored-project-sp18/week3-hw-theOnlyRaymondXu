@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
@@ -15,4 +15,9 @@ def index(request):
 def about(request):
     #################################
     # REPLACE THE LINE WITH YOUR CODE
-    return None
+    return Http404("No about page :(")
+
+def post_details(request, pk):
+    #################################
+    # REPLACE THE LINE WITH YOUR CODE
+    return Http404("No post details page :(")
