@@ -11,3 +11,8 @@ from .models import Post
 def index(request):
     posts = Post.objects.order_by("-pub_date")
     return render(request, "posts/index.html", {"posts": posts})
+
+def about(request):
+    #################################
+    # REPLACE THE LINE WITH YOUR CODE
+    return None
