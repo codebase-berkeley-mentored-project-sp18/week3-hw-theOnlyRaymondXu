@@ -24,4 +24,3 @@ class AboutPage(TestCase):
                         in response.content.encode("utf-8"),
                          "The about page should contain the string "
                          "'Bloggo is the best blog engine ever and it's gonna make me fifty trillion dollars'")
-        
