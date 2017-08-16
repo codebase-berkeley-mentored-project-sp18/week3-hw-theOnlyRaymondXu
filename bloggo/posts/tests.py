@@ -21,8 +21,8 @@ class AboutPage(TestCase):
                          "The about page template should extend the base.html template")
         self.assertEqual(response.templates[1].name, "posts/about.html",
                          "The about page template should extend the base.html template")
-        self.assertTrue("Bloggo is the best blog engine ever and it's gonna make me fifty trillion dollars"
-                        in response.content.encode("utf-8"),
+        self.assertTrue(b"Bloggo is the best blog engine ever and it's gonna make me fifty trillion dollars"
+                        in response.content,
                          "The about page should contain the string "
                          "'Bloggo is the best blog engine ever and it's gonna make me fifty trillion dollars'")
 
@@ -47,11 +47,11 @@ class PostDetailsPage(TestCase):
                          "The post details template should extend the base.html template")
         self.assertEqual(self.r.templates[0].name, "posts/base.html",
                          "The post details template should extend the base.html template")
-        self.assertTrue("Worst Day Ever" in self.r.content.encode("utf-8"),
+        self.assertTrue(b"Worst Day Ever" in self.r.content,
                         "The URL /posts/details/1 should contain the content of the post with pk=1 (Worst Day Ever)")
-        self.assertFalse("Chandler" in self.r.content.encode("utf-8"),
+        self.assertFalse(b"Chandler" in self.r.content,
                          "The URL /posts/details/1 should not contain the content of any other posts")
-        self.assertTrue("Chandler" in self.r2.content.encode("utf-8"),
+        self.assertTrue(b"Chandler" in self.r2.content,
                         "The URL /posts/details/2 should contain the content of the post with pk=2 (Important Questions)")
-        self.assertFalse("Worst Day Ever" in self.r2.content.encode("utf-8"),
+        self.assertFalse(b"Worst Day Ever" in self.r2.content,
                          "The URL /posts/details/2 should not contain the content of any other posts")
