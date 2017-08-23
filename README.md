@@ -87,7 +87,7 @@ localhost:8000/posts/4 and see the post with primary key 4, and so on.
 
 At this point you might be a little bit confused as to where all this post stuff came from. If you run the server and go to
 localhost:8000/posts you'll see that the blog already has some posts in it! That is, our blog engine already comes with some
-data included and a model for posts - the *Post* object in `bloggo/posts/models.py`. If you look in models.py, the Post object is
+data included and a model for posts - the **Post** object in `bloggo/posts/models.py`. If you look in models.py, the Post object is
 defined so that it has 3 fields - title (a character field), body (a text field), and pub_date (a date and time field). Django
 makes it so that all models automatically get a hidden primary key (pk) field as well.
 
