@@ -75,5 +75,11 @@ The client also wants the about page to look nice, so use the existing template 
 Right now the template is incomplete - you should make it extend the base template and add in the text from above that the client wants
 the about page to show.
 
+To see if your page works, run the server and go to the above URL. You should see the above text and also a page header linking to the main page.
+
 ### Question 2 - Dynamic Views and Routes
+
+The next thing the client wants is a unique URL to link to every individual article in the blog. Specifically, they want
+to be able to go to `localhost:8000/posts/1` and see the post with primary key 1, `localhost:8000/posts/4` and see the post with
+primary key 4, and so on.
 
