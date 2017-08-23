@@ -14,10 +14,11 @@ def index(request):
 
 def about(request):
     #################################
+    # Question 1
     # REPLACE THE LINE WITH YOUR CODE
-    return Http404("No about page :(")
+    return HttpResponse("No about page :(")
 
 def post_details(request, pk):
     #################################
     # REPLACE THE LINE WITH YOUR CODE
-    return Http404("No post details page :(")
+    return HttpResponse("No post details page :(")
