@@ -62,7 +62,7 @@ The first thing our client wants is an about page for their blog. Specifically, 
 > Bloggo is the best blog engine ever and it's gonna make me fifty trillion dollars!
 
 The first thing you'll need to do is add the URL to the list of URLs in `bloggo/posts/urls.py`, because it doesn't exist yet.
-A Django URL object looks like this:
+Recall that a Django URL object looks like this:
 ```python
 url(r'^the_url_for_the_view$', views.the_view_function, name="the_view_name")
 ```
@@ -79,7 +79,44 @@ To see if your page works, run the server and go to the above URL. You should se
 
 ### Question 2 - Dynamic Views and Routes
 
-The next thing the client wants is a unique URL to link to every individual article in the blog. Specifically, they want
-to be able to go to `localhost:8000/posts/1` and see the post with primary key 1, `localhost:8000/posts/4` and see the post with
-primary key 4, and so on.
+The next thing the client wants is a unique URL to link to the details of every individual post in the blog.
+Specifically, they want to be able to go to localhost:8000/posts/1 and see the title and text of the post with primary key 1,
+localhost:8000/posts/4 and see the post with primary key 4, and so on.
+
+#### The Post object
+
+At this point you might be a little bit confused as to where all this post stuff came from. If you run the server and go to
+localhost:8000/posts you'll see that the blog already has some posts in it! That is, our blog engine already comes with some
+data included and a model for posts - the *Post* object in `bloggo/posts/models.py`. If you look in models.py, the Post object is
+defined so that it has 3 fields - title (a character field), body (a text field), and pub_date (a date and time field). Django
+makes it so that all models automatically get a hidden primary key (pk) field as well.
+
+We can view all the existing Post objects by using the Django shell. In your terminal, run `python manage.py shell`.
+In the interactive shell that comes up, run the following code:
+
+```python
+>>> from posts.models import Post
+>>> all_posts = Posts.objects.all()
+>>> print(all_posts)
+```
+
+This should output a list of all the posts so far (basically all the text in the main page of the blog right now).
+You can view the single post with primary key 1 with the code
+
+```python
+>>> Post.objects.get(pk=1)
+```
+
+This should also do the same thing:
+
+```python
+>>> all_posts[0]
+```
+
+Note that this is all code you can use in your views too! All the code you type in the shell is code you can use in your
+view functions as well. If you look in views.py, you'll see how the main page queries all the posts as well. It's helpful
+to read through the view for that URL and the template to see how the main page gets all posts and displays them.
+
+Add the right URL object in urls.py and edit the view so that it gets the Post object corresponding to the input `pk` and
+renders a template with the post details (you'll need to create the template file yourself - name it whatever you want).
 
