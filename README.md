@@ -77,6 +77,12 @@ the about page to show.
 
 To see if your page works, run the server and go to the above URL. You should see the above text and also a page header linking to the main page.
 
+You should now commit and push your code to GitHub. If you want to test your code for this question, do
+
+```
+python manage.py test posts.tests.AboutPage
+```
+
 ### Question 2 - Dynamic Views and Routes
 
 The next thing the client wants is a unique URL to link to the details of every individual post in the blog.
@@ -120,3 +126,8 @@ to read through the view for that URL and the template to see how the main page 
 Add the right URL object in urls.py and edit the view so that it gets the Post object corresponding to the input `pk` and
 renders a template with the post details (you'll need to create the template file yourself - name it whatever you want).
 
+Once you finish, push your code to GitHub. You can manually test your code for this question with
+
+```
+python manage.py test posts.tests.PostDetailsPage
+```
