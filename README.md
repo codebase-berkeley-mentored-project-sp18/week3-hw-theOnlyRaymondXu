@@ -63,7 +63,7 @@ The first thing our client wants is an about page for their blog. Specifically, 
 
 The first thing you'll need to do is add the URL to the list of URLs in `bloggo/posts/urls.py`, because it doesn't exist yet.
 A Django URL object looks like this:
-```
+```python
 url(r'^the_url_for_the_view$', views.the_view_function, name="the_view_name")
 ```
 
