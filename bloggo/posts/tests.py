@@ -17,9 +17,9 @@ class AboutPage(TestCase):
                          "The URL /posts/about should resolve to the 'about' view function")
         self.assertEqual(len(response.templates), 2,
                          "The about page template should extend the base.html template")
-        self.assertEqual(response.templates[0].name, "posts/base.html",
+        self.assertEqual(response.templates[1].name, "posts/base.html",
                          "The about page template should extend the base.html template")
-        self.assertEqual(response.templates[1].name, "posts/about.html",
+        self.assertEqual(response.templates[0].name, "posts/about.html",
                          "The about page template should extend the base.html template")
         self.assertTrue(b"Bloggo is the best blog engine ever and it's gonna make me fifty trillion dollars"
                         in response.content,
@@ -45,7 +45,7 @@ class PostDetailsPage(TestCase):
     def testResponseContent(self):
         self.assertEqual(len(self.r.templates), 2,
                          "The post details template should extend the base.html template")
-        self.assertEqual(self.r.templates[0].name, "posts/base.html",
+        self.assertEqual(self.r.templates[1].name, "posts/base.html",
                          "The post details template should extend the base.html template")
         self.assertTrue(b"Worst Day Ever" in self.r.content,
                         "The URL /posts/details/1 should contain the content of the post with pk=1 (Worst Day Ever)")
