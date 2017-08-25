@@ -54,6 +54,12 @@ For this homework, we'll be building a blogging engine called "bloggo". The basi
 (you can view the blog as is by running the server and going to `localhost:8000/posts`),
 but our client wants us to add some more features.
 
+#### Reading
+
+* 
+* [Django templates](https://tutorial.djangogirls.org/en/django_templates/) (Tutorial)
+* [Template Extending](https://tutorial.djangogirls.org/en/template_extending/) (Tutorial)
+
 ### Question 1 - Static Pages and Templates
 
 The first thing our client wants is an about page for their blog. Specifically, they want to be able to go to the URL
@@ -86,8 +92,8 @@ python manage.py test posts.tests.AboutPage
 ### Question 2 - Dynamic Views and Routes
 
 The next thing the client wants is a unique URL to link to the details of every individual post in the blog.
-Specifically, they want to be able to go to localhost:8000/posts/1 and see the title and text of the post with primary key 1,
-localhost:8000/posts/4 and see the post with primary key 4, and so on.
+Specifically, they want to be able to go to localhost:8000/posts/details/1 and see the title and text of the post with primary key 1,
+localhost:8000/posts/details/4 and see the post with primary key 4, and so on.
 
 #### The Post object
 
