@@ -56,7 +56,6 @@ but our client wants us to add some more features.
 
 #### Reading
 
-* 
 * [Django templates](https://tutorial.djangogirls.org/en/django_templates/) (Tutorial)
 * [Template Extending](https://tutorial.djangogirls.org/en/template_extending/) (Tutorial)
 
@@ -88,6 +87,13 @@ You should now commit and push your code to GitHub. If you want to test your cod
 ```
 python manage.py test posts.tests.AboutPage
 ```
+
+#### Reading
+
+* [Models in Django](https://tutorial.djangogirls.org/en/django_models/) (Tutorial) _Note: don't worry about "Creating an Application" because we have set that up for you already._
+* [Introduction to Models in Django](https://docs.djangoproject.com/en/1.11/topics/db/models/) (Official Tutorial and Docs)
+* [Querying Models in Django](https://tutorial.djangogirls.org/en/django_orm/) (Tutorial)
+* [Dynamic Data in Templates](https://tutorial.djangogirls.org/en/dynamic_data_in_templates/) (Tutorial)
 
 ### Question 2 - Dynamic Views and Routes
 
