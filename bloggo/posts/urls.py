@@ -17,5 +17,5 @@ urlpatterns = [
     # named 'pk' to the URL's view function.
     #
     # REPLACE THE BELOW LINE with the correct view and URL for the post details page
-    url(r'^also_not_right/(?P<pk>\d+)$', views.index, name='post_details'),
+    url(r'^details/(?P<pk>\d+)$', views.post_details, name='post_details'),
 ]

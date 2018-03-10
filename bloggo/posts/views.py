@@ -23,4 +23,5 @@ def post_details(request, pk):
     # Question 2
     # You should create a new file in the templates directory.
     # REPLACE THE LINE WITH YOUR CODE
-    return HttpResponse("No post details page :(")
+    post = Post.objects.get(pk=pk)
+    return HttpResponse(post)
